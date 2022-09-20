@@ -227,7 +227,7 @@ public:
 int main()
 {
     deck d;
-    int num;
+    short unsigned int num;
     cout << "Xilat game by TUTICOI" << endl;
     cout << "Input number of players: ";
     cin >> num;
@@ -247,7 +247,7 @@ int main()
         cout << ": " << endl;
         players[i].print();
         cout << "Score: " << players[i].getPoint() << endl;
-        int cont = 1;
+        short unsigned int cont = 1;
         while (cont)
         {
             cout << "Continue drawing? (1 = Yes, 0 = No): ";
@@ -291,7 +291,5 @@ int main()
         }
         cout << endl;
     }
-
     return 0;
-    getch();
 }
