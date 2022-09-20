@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <conio.h>
 using namespace std;
 
 class card
@@ -216,6 +217,11 @@ public:
             p += cards[i].getPoint();
         return p;
     }
+
+    int getCount()
+    {
+        return count;
+    }
 };
 
 int main()
@@ -241,11 +247,23 @@ int main()
         cout << ": " << endl;
         players[i].print();
         cout << "Score: " << players[i].getPoint() << endl;
-        bool cont = 1;
+        int cont = 1;
         while (cont)
         {
-            cout << "Do you want to continue drawing? (1 = Yes, 0 = No): ";
-            cin >> cont;
+            cout << "Continue drawing? (1 = Yes, 0 = No): ";
+            try
+            {
+                cin >> cont;
+                if (cont != 1 && cont != 0)
+                {
+                    throw(cont);
+                }
+            }
+            catch (...)
+            {
+                cout << "Invalid input! Default option: No" << endl;
+                cont = 0;
+            }
             if (cont)
             {
                 players[i].draw(d);
@@ -260,9 +278,10 @@ int main()
                 }
 
                 if (score == 21)
-                {
                     cont = 0;
-                }
+
+                if (score <= 21 && players[i].getCount() == 5)
+                    cont = 0;
             }
             else
             {
@@ -274,4 +293,5 @@ int main()
     }
 
     return 0;
+    getch();
 }
