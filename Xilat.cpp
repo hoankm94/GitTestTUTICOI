@@ -1,3 +1,4 @@
+//Tham khao teacher Dung~
 #include <iostream>
 #include <string>
 #include <ctime>
