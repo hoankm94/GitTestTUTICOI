@@ -1,3 +1,5 @@
+//con cặc
+//con đỉ mẹ mày
 #include <iostream>
 #include <string>
 #include <ctime>
