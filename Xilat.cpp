@@ -231,7 +231,7 @@ int main()
     cout << "Xilat game by TUTICOI" << endl;
     cout << "Input number of players: ";
     cin >> num;
-    player *players = new player[num];
+    player players[num];
     for (int i = 0; i < num; i++)
     {
         cout << "Input player " << i + 1 << "'s name: ";
